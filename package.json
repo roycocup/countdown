@@ -11,8 +11,8 @@
     "compile": "yarn tsc app.ts",
     "build": "concurrently --kill-others 'yarn compile' 'yarn css'",
     "sass-watch": "sass --watch style.sass style.css",
-    "tsc-watch": "npx tsc --watch app.ts -o app.js",
+    "tsc-watch": "tsc --watch app.ts",
     "serve": "node server.js",
-    "start": "concurrently --kill-others 'yarn serve' 'yarn sass-watch'"
+    "start": "concurrently --kill-others 'yarn serve' 'yarn tsc-watch' 'yarn sass-watch'"
   }
 }
