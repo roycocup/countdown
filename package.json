@@ -7,11 +7,12 @@
     "yarn": "^1.22.10"
   },
   "scripts": {
-    "watch": "yarn sass --watch style.sass style.css",
     "css": "yarn sass style.sass style.css",
-    "tsc": "yarn tsc app.ts app.js",
-    "build": "concurrently --kill-others 'yarn tsc' 'yarn css'",
+    "compile": "yarn tsc app.ts",
+    "build": "concurrently --kill-others 'yarn compile' 'yarn css'",
+    "sass-watch": "sass --watch style.sass style.css",
+    "tsc-watch": "npx tsc --watch app.ts -o app.js",
     "serve": "node server.js",
-    "start": "concurrently --kill-others 'yarn serve' 'yarn watch'"
+    "start": "concurrently --kill-others 'yarn serve' 'yarn sass-watch'"
   }
 }
