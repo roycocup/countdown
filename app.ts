@@ -6,7 +6,7 @@ enum Units {
     Seconds
 }
 
-function timeFrom(nodes: Element[]){
+function timeFrom(): any {
     let target = new Date('2021-05-12')
     let now = new Date()
     let diff = (target - now)
@@ -14,12 +14,7 @@ function timeFrom(nodes: Element[]){
     let hours = getNumUnits(diff, Units.Hours)
     let minutes = getNumUnits(diff, Units.Minutes)
     let seconds = getNumUnits(diff, Units.Seconds)
-    data = {'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds}
-    
-    for(node in nodes){
-        node.innerHTML = seconds.toString()
-        document.getElementById('timer').appendChild(node)
-    } 
+    return {'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds}
 }
 
 function getNumUnits(diff: number, units: Units) {
@@ -35,11 +30,53 @@ function getNumUnits(diff: number, units: Units) {
     }
 }
 
-function draw(){
+class Component {
+    targetElement: HTMLElement;
+    constructor(targetElement: HTMLElement){
+        this.targetElement = targetElement
+    }
+    update(){}
+    draw(){}
+}
+
+class Engine {
     
+    components: Component[];
+
+    constructor(components: Component[]){
+        this.components = components
+    }
+
+    run(){
+        setInterval(()=>{
+            this.update()
+        }, 1000)
+    }
+
+    update(){
+        this.components.forEach(component => {
+            component.update();
+        });
+    }
+}
+
+class Clock extends Component{
+    update(){
+        console.log('Clock...');
+    }
+}
+
+class Dots extends Component{
+    update(){
+        console.log('Dots...');
+    }
 }
 
 
 
-let node = document.createElement('div')
-setInterval(()=>{timeFrom(node)}, 1000)
+var payload: Component[] = [new Clock(), new Dots()];
+let engine = new Engine(payload)
+// engine.run()
+
+
+
