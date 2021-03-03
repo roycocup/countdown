@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "npm": "^7.5.3",
     "babel-cli": "^6.26.0",
     "concurrently": "^6.0.0",
     "sass": "^1.32.8",
@@ -9,7 +10,7 @@
   "scripts": {
     "css": "yarn sass style.sass style.css",
     "compile": "yarn tsc app.ts",
-    "build": "concurrently --kill-others 'yarn compile' 'yarn css'",
+    "build-dev": "concurrently --kill-others 'yarn compile' 'yarn css'",
     "sass-watch": "sass --watch style.sass style.css",
     "tsc-watch": "tsc --watch app.ts",
     "serve": "node server.js",
