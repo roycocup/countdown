@@ -1,14 +1,24 @@
+$font-size-medium: 2.5em
+$font-size-Xlarge: 10em
+$blocks-width: 6em
+$blocks-height: 6em
+
+
 body
     background-color: #001
     color: #ffd
 
-
-
-.timer_header
-    font-size: 60px
-    td
-        padding: 50px 50px 10px 50px
-
-#timer
-    font-size: 130px
-    text-align: center
+.header_blocks 
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    height: $blocks-height
+    justify-content: space-evenly
+    .block
+        align-self: center
+        width: $blocks-width
+        font-size: $font-size-medium
+        text-align: center
+    .block-giant
+        font-size: $font-size-Xlarge
+        

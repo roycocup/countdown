@@ -3,16 +3,21 @@ body {
   color: #ffd;
 }
 
-.timer_header {
-  font-size: 60px;
+.header_blocks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 6em;
+  justify-content: space-evenly;
 }
-.timer_header td {
-  padding: 50px 50px 10px 50px;
-}
-
-#timer {
-  font-size: 130px;
+.header_blocks .block {
+  align-self: center;
+  width: 6em;
+  font-size: 2.5em;
   text-align: center;
+}
+.header_blocks .block-giant {
+  font-size: 10em;
 }
 
 /*# sourceMappingURL=style.css.map */

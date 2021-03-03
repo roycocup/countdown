@@ -114,12 +114,12 @@ var Clock = /** @class */ (function (_super) {
         var to = new Date('2021-05-12');
         var dateEngine = new DatesEngine(to);
         var fullTimes = dateEngine.fullClock();
-        var clock = "<td>" + fullTimes.months_left
-            + "</td><td>" + fullTimes.days_left
-            + "</td><td>" + fullTimes.hours_left
-            + "</td><td>" + fullTimes.minutes_left
-            + "</td><td>" + fullTimes.seconds_left
-            + "</td>";
+        var clock = "<div class='block block-giant'>" + fullTimes.months_left
+            + "</div><div class='block block-giant'>" + fullTimes.days_left
+            + "</div><div class='block block-giant'>" + fullTimes.hours_left
+            + "</div><div class='block block-giant'>" + fullTimes.minutes_left
+            + "</div><div class='block block-giant'>" + fullTimes.seconds_left
+            + "</div>";
         this.targetElement.innerHTML = clock;
     };
     return Clock;

@@ -115,12 +115,12 @@ class Clock extends Component {
         
         const fullTimes = dateEngine.fullClock()
         let clock = 
-            "<td>" + fullTimes.months_left 
-            + "</td><td>" + fullTimes.days_left 
-            + "</td><td>" + fullTimes.hours_left 
-            + "</td><td>" + fullTimes.minutes_left 
-            + "</td><td>" + fullTimes.seconds_left 
-            + "</td>"
+            "<div class='block block-giant'>" + fullTimes.months_left 
+            + "</div><div class='block block-giant'>" + fullTimes.days_left 
+            + "</div><div class='block block-giant'>" + fullTimes.hours_left 
+            + "</div><div class='block block-giant'>" + fullTimes.minutes_left 
+            + "</div><div class='block block-giant'>" + fullTimes.seconds_left 
+            + "</div>"
         
         this.targetElement.innerHTML = clock
     }
