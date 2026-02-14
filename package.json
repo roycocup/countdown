@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "npm": "^7.5.3",
+    "npm": "^7.21.0",
     "babel-cli": "^6.26.0",
     "concurrently": "^6.0.0",
     "sass": "^1.32.8",
